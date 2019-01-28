@@ -75,15 +75,15 @@ class Registration extends CI_Controller {
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.googlemail.com'; 
         $config['smtp_port'] = '465';
-        $config['smtp_user'] = 's.subhasri.1994@gmail.com'; 
-        $config['smtp_pass'] = 'Gnanam@268'; 
+        $config['smtp_user'] = ''; // please enter your email 
+        $config['smtp_pass'] = '';  //Enter your password
         $config['mailtype'] = 'html';
         $config['charset'] = 'iso-8859-1';
         $this->load->library('email');
         $this->email->initialize($config);
         $this->email->set_newline("\r\n");  
         $message = 'Hai'.$firstname.'Your Registration Process Completed Successfully';
-        $this->email->from('s.subhasri.1994@gmail.com'); 
+        $this->email->from('example@gmail.com'); 
         $this->email->to($mailid);
         $this->email->subject('Registration Complete');
         $this->email->message($message);
